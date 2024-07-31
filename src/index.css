@@ -15,3 +15,22 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/* Base style for the menu on larger screens */
+#navbar-default {
+  max-height: none;
+}
+
+/* Style for the menu on smaller screens */
+@media (max-width: 767px) { /* Adjust the max-width based on your breakpoint */
+  #navbar-default {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+  }
+
+  #navbar-default.open {
+    max-height: 500px; /* Adjust based on your menu's height */
+  }
+}
+

@@ -13,7 +13,7 @@ const Header = () => {
     <nav className="bg-header">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <a href="/" className="flex items-center space-x-3 rtl:space-x-reverse">
-          <img src={queenCobraLogo} className="h-20" alt="Queen Cobra Logo" />
+          <img src={queenCobraLogo} className="h-[100px] md:h-[150px]" alt="Queen Cobra Logo" />
         </a>
         <button 
           onClick={toggleMenu} 
@@ -27,22 +27,25 @@ const Header = () => {
             <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M1 1h15M1 7h15M1 13h15"/>
           </svg>
         </button>
-        <div className={`${isMenuOpen ? 'block' : 'hidden'} w-full md:block md:w-auto`} id="navbar-default">
+        <div 
+          className={`w-full md:block md:w-auto ${isMenuOpen ? 'open' : ''}`} 
+          id="navbar-default"
+        >
           <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 bg-header md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0">
             <li>
-              <Link to="/" className="block py-2 px-3 text-accent2 hover:text-accent rounded md:bg-transparent md:text-accent2 md:p-0 " aria-current="page">Home</Link>
+              <Link to="/" className="block py-2 px-3 text-accent2 hover:text-accent focus:text-accent rounded md:bg-transparent md:text-accent2 md:p-0 " aria-current="page">Home</Link>
             </li>
             <li>
-              <Link to="/home" className="block py-2 px-3 text-accent2 hover:text-accent rounded md:p-0 ">About</Link>
+              <Link to="/home" className="block py-2 px-3 text-accent2 hover:text-accent focus:text-accent  rounded md:p-0 ">About</Link>
             </li>
             <li>
-              <Link to="/services" className="block py-2 px-3 text-accent2 hover:text-accent rounded md:p-0 ">Services</Link>
+              <Link to="/services" className="block py-2 px-3 text-accent2 hover:text-accent focus:text-accent  rounded md:p-0 ">Services</Link>
             </li>
             <li>
-              <Link to="/portfolio" className="block py-2 px-3 text-accent2 hover:text-accent rounde md:p-0 ">Portfolio</Link>
-              </li>
+              <Link to="/portfolio" className="block py-2 px-3 text-accent2 hover:text-accent focus:text-accent  rounded md:p-0 ">Portfolio</Link>
+            </li>
             <li>
-              <Link to="/contact" className="block py-2 px-3 text-accent2 hover:text-accent md:p-0 ">Contact</Link>
+              <Link to="/contact" className="block py-2 px-3 text-accent2 hover:text-accent focus:text-accent  md:p-0 ">Contact</Link>
             </li>
           </ul>
         </div>
